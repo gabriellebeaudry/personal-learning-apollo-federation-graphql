@@ -1,3 +1,5 @@
+## alternate schema file, written in Python for practice 
+
 from fastapi import FastAPI
 from strawberry.fastapi import GraphQLRouter
 import strawberry, uvicorn
@@ -21,6 +23,7 @@ class Query:
     @strawberry.field
     def get_product(self, id: strawberry.ID) -> Optional[Product]:
         # Return a hardcoded product for demonstration
+        
         if id == "1":
             return Product(id=id, name="Product A", price=100.0)
         return None
